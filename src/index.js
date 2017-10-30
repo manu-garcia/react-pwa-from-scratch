@@ -6,3 +6,15 @@ import App from './App';
 import './index.css';
 
 ReactDOM.render(<App/>, document.getElementById('application'));
+
+if ('serviceWorker' in navigator) {
+
+  // Register a single service worker for the whole application at the root of the app.
+  navigator.serviceWorker.register('/sw.js', {scope: '/'})
+    .then(() => {
+      // Service worker registered
+    })
+    .catch((error) => {
+      console.log('Service worker registration failed with error: ', error);
+    });
+}
