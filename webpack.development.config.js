@@ -9,7 +9,7 @@ module.exports = {
     './src/index.js'
   ],
   output: {
-    path: path.resolve(__dirname, './build'),
+    path: path.resolve(__dirname, './docs'),
 
     // Hot Module Replacement complains about using chunkhash, and recommended to use hash instead
     filename: '[name].[hash:8].js',

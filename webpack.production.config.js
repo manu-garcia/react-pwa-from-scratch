@@ -11,7 +11,7 @@ module.exports = {
     './src/index.js'
   ],
   output: {
-    path: path.resolve(__dirname, './build'),
+    path: path.resolve(__dirname, './docs'),
 
     // Main bundle names
     filename: '[name].[chunkhash:8].js',
@@ -47,7 +47,7 @@ module.exports = {
       }
     }),
     // Clean build directory before each new build
-    new CleanWebpackPlugin(['build']),
+    new CleanWebpackPlugin(['docs']),
     // Extract CSS to a separated bundle
     new ExtractTextPlugin({
       filename: '[name].[chunkhash:8].css'

@@ -2,7 +2,7 @@ var path = require('path');
 
 var config = {
   
-  contentBase: path.join(__dirname, "build"),
+  contentBase: path.join(__dirname, "docs"),
   watchContentBase: true,
   
   host: 'localhost',
