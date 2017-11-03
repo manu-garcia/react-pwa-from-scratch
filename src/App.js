@@ -6,6 +6,8 @@ import {
   Switch  
 } from 'react-router-dom';
 
+import AppNav from './AppNav';
+
 import Loadable from 'react-loadable';
 
 import './App.scss';
@@ -19,30 +21,27 @@ const Activity = Loadable({
   loading: Loading,
 });
 
-class AppNav extends Component {
-  render() {
-    return (
-      <div>
-        <ul className="App-nav">
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/activity">Activity</Link></li>
-        </ul>
-      </div>
-    );
-  }
-}
+const Profile = Loadable({
+  loader: () => import(/* webpackChunkName: "profile" */'./Profile'),
+  loading: Loading,
+});
+
+const Search = Loadable({
+  loader: () => import(/* webpackChunkName: "search" */'./Search'),
+  loading: Loading,
+});
+
 class App extends Component {
   render() {
     return (
       <BrowserRouter>  
-        <div className="app-container">
-          <header className="app-header">
-            <h1 className="app-title">Welcome to React</h1>
-          </header>
+        <div className="App-container">
           <AppNav />
 
           <Switch>
             <Route path="/activity" component={Activity}/>
+            <Route path="/profile" component={Profile}/>
+            <Route path="/search" component={Search}/>
           </Switch>
 
         </div>

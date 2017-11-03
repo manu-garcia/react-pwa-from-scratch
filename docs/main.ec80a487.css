@@ -1,0 +1,10 @@
+.App-container .App-nav {
+  list-style: none; }
+  .App-container .App-nav li {
+    display: inline;
+    font-size: 48px;
+    min-width: 48px;
+    min-height: 48px; }
+    .App-container .App-nav li a {
+      color: black; }
+/* Global styles */

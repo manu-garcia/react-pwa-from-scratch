@@ -1,6 +1,6 @@
-webpackJsonp([0],{
+webpackJsonp([1],{
 
-/***/ 82:
+/***/ 88:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17,30 +17,30 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var Activity = function (_Component) {
-  _inherits(Activity, _Component);
+var Profile = function (_Component) {
+  _inherits(Profile, _Component);
 
-  function Activity() {
-    _classCallCheck(this, Activity);
+  function Profile() {
+    _classCallCheck(this, Profile);
 
-    return _possibleConstructorReturn(this, (Activity.__proto__ || Object.getPrototypeOf(Activity)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (Profile.__proto__ || Object.getPrototypeOf(Profile)).apply(this, arguments));
   }
 
-  _createClass(Activity, [{
+  _createClass(Profile, [{
     key: 'render',
     value: function render() {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'p',
         null,
-        'This is the activity Component'
+        'This is the profile Component'
       );
     }
   }]);
 
-  return Activity;
+  return Profile;
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
-/* harmony default export */ __webpack_exports__["default"] = (Activity);
+/* harmony default export */ __webpack_exports__["default"] = (Profile);
 
 /***/ })
 

@@ -55,7 +55,10 @@ module.exports = {
     }),
     // Copy the service worker as it is to the build folder
     new CopyWebpackPlugin([
-      './public/sw.js'
+      './public/sw.js',
+      './public/manifest.json',
+      './public/CNAME',
+      {from: './public/icons/', to: './icons/'}
     ])
   ]
 };
