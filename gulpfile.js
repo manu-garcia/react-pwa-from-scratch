@@ -1,5 +1,4 @@
 
-const fs = require('fs-extra');
 var gulp = require('gulp');
 var webpack = require('webpack');
 var webpackDevServer = require('webpack-dev-server');
@@ -23,10 +22,6 @@ gulp.task('build', function (callback) {
   process.env.NODE_ENV = 'production';
 
   var compiler = webpack(webpackConfigProduction, function () {
-    
-    // For now copy service worker to build directory. Use "workbox-webpack-plugin" in the future
-    fs.copySync('./public/sw.js', './docs/sw.js');
-  
     callback();
   });
 

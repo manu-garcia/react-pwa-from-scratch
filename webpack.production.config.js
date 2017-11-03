@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const env = require('./env.production');
 
@@ -52,5 +53,9 @@ module.exports = {
     new ExtractTextPlugin({
       filename: '[name].[chunkhash:8].css'
     }),
+    // Copy the service worker as it is to the build folder
+    new CopyWebpackPlugin([
+      './public/sw.js'
+    ])
   ]
 };

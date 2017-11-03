@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 var env = require('./env.production');
 
@@ -45,5 +46,9 @@ module.exports = {
     // Activates hot module replacement
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
+    // Make service worker available to the dev server, without really copying files and polluting the src folder.
+    new CopyWebpackPlugin([
+      './public/sw.js',
+    ]),
   ]
 };
