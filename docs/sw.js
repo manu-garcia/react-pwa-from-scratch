@@ -1,5 +1,19 @@
 
-const reactPWAFromScratchCacheVersion = 'react-pwa-from-scratch-v10';
+// SW_CACHE_VERSION will be replaced while copying this file to the build directory with InterpolateSWPlugin
+const reactPWAFromScratchCacheVersion = 'react-pwa-from-scratch-v' + '1509833826907';
+
+// SW_ASSET_FILES will be feed with all the generated assets for pre-cache purposes
+//  while copying this file to the build directory with InterpolateSWPlugin
+const cacheAll = ["search.fe2fca9d.chunk.js",
+"profile.733a7bea.chunk.js",
+"activity.82e498fd.chunk.js",
+"main.ec80a487.js",
+"main.ec80a487.css",
+"index.html",
+"manifest.json",
+"CNAME",
+"icons/launcher-icon-1x.png",
+"icons/launcher-icon-4x.png"];
 
 /**
  * Pre-cache some assets when service worker is registered
@@ -7,13 +21,31 @@ const reactPWAFromScratchCacheVersion = 'react-pwa-from-scratch-v10';
 this.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(reactPWAFromScratchCacheVersion).then((cache) => {
-      return cache.addAll([
-        'index.html',
-      ]);
+      return cache.addAll(cacheAll);
     })
   );
 });
 
+/**
+ * Activate gets executed after install in the sw life cycle. So current cache is already created.
+ */
+this.addEventListener('activate', (event) => {
+  
+    // Promises passed here will block other events, we can safely remove old caches or content here
+    event.waitUntil(
+      // Loop through all created caches
+      caches.keys().then((keyList) => {
+        return Promise.all(keyList.map((key) => {
+          // For now that would do it. Delete all previously created caches but the current one.
+          if (reactPWAFromScratchCacheVersion != key) {
+            return caches.delete(key);
+          }
+        }));
+      })
+    );
+  
+  });
+  
 /**
  * Intercepts application's requests and serves them first from cache.
  */

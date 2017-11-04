@@ -6,6 +6,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const env = require('./env.production');
+const InterpolateSWPlugin = require('./webpack.interpolate.sw.plugin');
 
 module.exports = {
   entry: [
@@ -55,10 +56,18 @@ module.exports = {
     }),
     // Copy the service worker as it is to the build folder
     new CopyWebpackPlugin([
-      './public/sw.js',
       './public/manifest.json',
       './public/CNAME',
-      {from: './public/icons/', to: './icons/'}
-    ])
+      {from: './public/icons/', to: './icons/'},
+    ]),
+    // Copy the service worker and inject in it the list of assets for pre-cache and cache version
+    // Notice runing this plugin after CopyWebpackPlugin will include copied files too
+    new InterpolateSWPlugin({
+      from: './public/sw.js',
+      to: 'sw.js',
+      replaceCacheVersion: true,
+      replaceAssetFiles: true,
+    }),
+    
   ]
 };
