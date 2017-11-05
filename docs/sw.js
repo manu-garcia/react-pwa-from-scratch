@@ -1,14 +1,13 @@
-
 // SW_CACHE_VERSION will be replaced while copying this file to the build directory with InterpolateSWPlugin
-const reactPWAFromScratchCacheVersion = 'react-pwa-from-scratch-v' + '1509833826907';
+const reactPWAFromScratchCacheVersion = 'react-pwa-from-scratch-v' + '1509926029010';
 
 // SW_ASSET_FILES will be feed with all the generated assets for pre-cache purposes
 //  while copying this file to the build directory with InterpolateSWPlugin
 const cacheAll = ["search.fe2fca9d.chunk.js",
 "profile.733a7bea.chunk.js",
 "activity.82e498fd.chunk.js",
-"main.ec80a487.js",
-"main.ec80a487.css",
+"main.7f9e4f25.js",
+"main.7f9e4f25.css",
 "index.html",
 "manifest.json",
 "CNAME",
@@ -81,4 +80,13 @@ this.addEventListener('fetch', (event) => {
 
     })
   );
+});
+
+/**
+ * Custom messages from the application thread
+ */
+self.addEventListener('message', function(event) {
+  if (event.data.action === 'skipWaiting') {
+    self.skipWaiting();
+  }
 });

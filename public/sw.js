@@ -1,4 +1,3 @@
-
 // SW_CACHE_VERSION will be replaced while copying this file to the build directory with InterpolateSWPlugin
 const reactPWAFromScratchCacheVersion = 'react-pwa-from-scratch-v' + '%SW_CACHE_VERSION%';
 
@@ -72,4 +71,13 @@ this.addEventListener('fetch', (event) => {
 
     })
   );
+});
+
+/**
+ * Custom messages from the application thread
+ */
+self.addEventListener('message', function(event) {
+  if (event.data.action === 'skipWaiting') {
+    self.skipWaiting();
+  }
 });
