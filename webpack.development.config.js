@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const InterpolateSWPlugin = require('interpolate-sw-plugin');
 
 var env = require('./env.production');
 
@@ -46,9 +47,18 @@ module.exports = {
     // Activates hot module replacement
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
-    // Make service worker available to the dev server, without really copying files and polluting the src folder.
     new CopyWebpackPlugin([
-      './public/sw.js',
+      './public/manifest.json',
+      {from: './public/icons/', to: './icons/'},
     ]),
+    // Copy the service worker and inject in it the list of assets for pre-cache and cache version
+    // Notice runing this plugin after CopyWebpackPlugin will include copied files too
+    new InterpolateSWPlugin({
+      from: './public/sw.js',
+      to: 'sw.js',
+      replaceCacheVersion: true,
+      replaceAssetFiles: true,
+    }),
+
   ]
 };
