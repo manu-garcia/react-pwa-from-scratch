@@ -4,9 +4,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const InterpolateSWPlugin = require('interpolate-sw-plugin');
 
 const env = require('./env.production');
-const InterpolateSWPlugin = require('./webpack.interpolate.sw.plugin');
 
 module.exports = {
   entry: [
