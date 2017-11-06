@@ -77,6 +77,7 @@ this.addEventListener('fetch', (event) => {
  * Custom messages from the application thread
  */
 self.addEventListener('message', function(event) {
+  // Activate the new service worker
   if (event.data.action === 'skipWaiting') {
     self.skipWaiting();
   }
