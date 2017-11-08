@@ -1,15 +1,15 @@
 // SW_CACHE_VERSION will be replaced while copying this file to the build directory with InterpolateSWPlugin
-const reactPWAFromScratchCacheVersion = 'react-pwa-from-scratch-v' + '%SW_CACHE_VERSION%';
+const reactPWAFromScratchCacheVersion = 'react-pwa-from-scratch-v' + '"%SW_CACHE_VERSION%"';
 
 // SW_ASSET_FILES will be feed with all the generated assets for pre-cache purposes
 //  while copying this file to the build directory with InterpolateSWPlugin
-const cacheAll = [%SW_ASSET_FILES%];
+const cacheAll = ["%SW_ASSET_FILES%"];
 
 /**
  * Pre-cache some assets when service worker is registered
  */
-this.addEventListener('install', (event) => {
-  event.waitUntil(
+self.addEventListener('install', (event) => {
+   event.waitUntil(
     caches.open(reactPWAFromScratchCacheVersion).then((cache) => {
       return cache.addAll(cacheAll);
     })
@@ -19,7 +19,7 @@ this.addEventListener('install', (event) => {
 /**
  * Activate gets executed after install in the sw life cycle. So current cache is already created.
  */
-this.addEventListener('activate', (event) => {
+self.addEventListener('activate', (event) => {
   
     // Promises passed here will block other events, we can safely remove old caches or content here
     event.waitUntil(
@@ -39,7 +39,7 @@ this.addEventListener('activate', (event) => {
 /**
  * Intercepts application's requests and serves them first from cache.
  */
-this.addEventListener('fetch', (event) => {
+self.addEventListener('fetch', (event) => {
   event.respondWith(
 
     // Request in cache?

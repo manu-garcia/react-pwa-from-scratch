@@ -25,7 +25,7 @@
     "fs-extra": "^4.0.2",
     "gulp": "^3.9.1",
     "html-webpack-plugin": "^2.30.1",
-    "interpolate-sw-plugin": "^1.0.2",
+    "interpolate-sw-plugin": "^2.0.1",
     "node-sass": "^4.5.3",
     "opn": "^5.1.0",
     "react-dom": "^16.0.0",
