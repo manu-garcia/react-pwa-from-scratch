@@ -6,13 +6,13 @@ import FaHome from 'react-icons/lib/fa/home';
 import FaProfile from 'react-icons/lib/fa/user';
 import FaSearch from 'react-icons/lib/fa/search';
 
-import './App.scss';
+import './app.scss';
 
 class AppNav extends Component {
   render() {
     return (
       <div>
-        <ul className="App-nav">
+        <ul className="app-nav">
           <li><Link to="/activity"><FaHome /></Link></li>
           <li><Link to="/profile"><FaProfile /></Link></li>
           <li><Link to="/search"><FaSearch /></Link></li>

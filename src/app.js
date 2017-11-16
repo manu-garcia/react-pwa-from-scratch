@@ -6,28 +6,28 @@ import {
   Switch  
 } from 'react-router-dom';
 
-import AppNav from './AppNav';
+import AppNav from './appnav';
 
 import Loadable from 'react-loadable';
 
-import './App.scss';
+import './app.scss';
 
 function Loading() {
   return <div>Loading...</div>;
 }
 
 const Activity = Loadable({
-  loader: () => import(/* webpackChunkName: "activity" */'./Activity'),
+  loader: () => import(/* webpackChunkName: "activity" */'./activity/activity'),
   loading: Loading,
 });
 
 const Profile = Loadable({
-  loader: () => import(/* webpackChunkName: "profile" */'./Profile'),
+  loader: () => import(/* webpackChunkName: "profile" */'./profile/profile'),
   loading: Loading,
 });
 
 const Search = Loadable({
-  loader: () => import(/* webpackChunkName: "search" */'./Search'),
+  loader: () => import(/* webpackChunkName: "search" */'./search/search'),
   loading: Loading,
 });
 
@@ -35,7 +35,7 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>  
-        <div className="App-container">
+        <div className="app-container">
           <AppNav />
 
           <Switch>

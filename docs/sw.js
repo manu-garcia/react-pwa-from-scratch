@@ -1,24 +1,20 @@
 // SW_CACHE_VERSION will be replaced while copying this file to the build directory with InterpolateSWPlugin
-const reactPWAFromScratchCacheVersion = 'react-pwa-from-scratch-v' + '1509926029010';
+const reactPWAFromScratchCacheVersion = 'react-pwa-from-scratch-v' + '1510876281592';
 
 // SW_ASSET_FILES will be feed with all the generated assets for pre-cache purposes
 //  while copying this file to the build directory with InterpolateSWPlugin
-const cacheAll = ["search.fe2fca9d.chunk.js",
-"profile.733a7bea.chunk.js",
-"activity.82e498fd.chunk.js",
-"main.7f9e4f25.js",
-"main.7f9e4f25.css",
-"index.html",
-"manifest.json",
-"CNAME",
-"icons/launcher-icon-1x.png",
-"icons/launcher-icon-4x.png"];
+const cacheAll = ["sw.js",
+"search.04da6823.chunk.js",
+"profile.28657cfc.chunk.js",
+"activity.11597860.chunk.js",
+"main.5a1d9236.js",
+"main.5a1d9236.css"];
 
 /**
  * Pre-cache some assets when service worker is registered
  */
-this.addEventListener('install', (event) => {
-  event.waitUntil(
+self.addEventListener('install', (event) => {
+   event.waitUntil(
     caches.open(reactPWAFromScratchCacheVersion).then((cache) => {
       return cache.addAll(cacheAll);
     })
@@ -28,7 +24,7 @@ this.addEventListener('install', (event) => {
 /**
  * Activate gets executed after install in the sw life cycle. So current cache is already created.
  */
-this.addEventListener('activate', (event) => {
+self.addEventListener('activate', (event) => {
   
     // Promises passed here will block other events, we can safely remove old caches or content here
     event.waitUntil(
@@ -48,7 +44,7 @@ this.addEventListener('activate', (event) => {
 /**
  * Intercepts application's requests and serves them first from cache.
  */
-this.addEventListener('fetch', (event) => {
+self.addEventListener('fetch', (event) => {
   event.respondWith(
 
     // Request in cache?
@@ -86,6 +82,7 @@ this.addEventListener('fetch', (event) => {
  * Custom messages from the application thread
  */
 self.addEventListener('message', function(event) {
+  // Activate the new service worker
   if (event.data.action === 'skipWaiting') {
     self.skipWaiting();
   }
