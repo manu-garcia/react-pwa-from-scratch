@@ -1,0 +1,29 @@
+// Defaults
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+$padding: 2%;
+
+
+// Mixins
+@mixin debug ($color: red) {
+  // border: 1px solid $color;
+}
+
+$clickable-min-width: 50px;
+$clickable-min-height: 50px;
+
+@mixin clickable() {
+  min-width: $clickable-min-width;
+  min-height: $clickable-min-height;
+}

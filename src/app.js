@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 
 import AppNav from './appnav';
+import Footer from './footer/footer';
 
 import Loadable from 'react-loadable';
 
@@ -16,8 +17,8 @@ function Loading() {
   return <div>Loading...</div>;
 }
 
-const Activity = Loadable({
-  loader: () => import(/* webpackChunkName: "activity" */'./activity/activity'),
+const Publish = Loadable({
+  loader: () => import(/* webpackChunkName: "publish" */'./publish/publish'),
   loading: Loading,
 });
 
@@ -35,14 +36,19 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>  
-        <div className="app-container">
+        <div className="application-container">
+
           <AppNav />
 
-          <Switch>
-            <Route path="/activity" component={Activity}/>
-            <Route path="/profile" component={Profile}/>
-            <Route path="/search" component={Search}/>
-          </Switch>
+          <div className="content">
+            <Switch>
+              <Route path="/publish" component={Publish}/>
+              <Route path="/profile" component={Profile}/>
+              <Route path="/search" component={Search}/>
+            </Switch>
+          </div>
+
+          <Footer />
 
         </div>
       </BrowserRouter>  
@@ -60,8 +66,8 @@ class App extends Component {
 //
 //   console.log('Hot Module Rreplacement is active!');
 //
-//   module.hot.accept('./Activity', function () {
-//     console.log('Accepting Activity hot module replacement!');
+//   module.hot.accept('./Publish', function () {
+//     console.log('Accepting Publish hot module replacement!');
 //   });
 //
 // } else {

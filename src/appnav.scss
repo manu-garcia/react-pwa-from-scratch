@@ -1,0 +1,38 @@
+@import "./theme";
+
+.app-nav-component {
+
+  @include debug(red);
+  padding: $padding;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid grey;
+  
+  .logo-box {
+    @include debug(red);
+    flex: 1;
+    display: flex;    
+    justify-content: center;
+    .logo {
+      @include clickable();
+      color: black;
+    }
+
+  }
+  
+  .nav-box {
+    @include debug(blue);
+
+    flex: 3;
+    display: flex;
+    justify-content: space-around;
+    border-left: 1px solid black;
+    
+    .nav-opt {
+      @include clickable();
+      color: black;
+    }
+
+  }
+
+}

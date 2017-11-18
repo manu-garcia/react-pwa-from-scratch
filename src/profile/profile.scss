@@ -1,0 +1,28 @@
+@import "../theme";
+
+.profile-component {
+  @include debug(blue);
+  padding: $padding;
+
+  .profile-box {
+    @include debug(green);
+    
+    img.profile-img {
+      min-width: 200px;
+      min-height: 200px;
+  
+      background-color: black;
+    }
+
+    .stage-name {
+    }
+
+    .bio {
+    }
+  
+  }
+
+  .profile-nav {
+    padding: $padding 0;
+  }
+}
