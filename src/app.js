@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  BrowserRouter,
+  HashRouter,
   Route,
   Link,
   Switch  
@@ -35,7 +35,7 @@ const Search = Loadable({
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>  
+      <HashRouter>  
         <div className="application-container">
 
           <AppNav />
@@ -51,9 +51,9 @@ class App extends Component {
           <Footer />
 
         </div>
-      </BrowserRouter>  
+      </HashRouter>
     );
-  }
+  }  
 }
 
 /**

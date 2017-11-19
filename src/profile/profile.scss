@@ -22,7 +22,21 @@
   
   }
 
-  .profile-nav {
-    padding: $padding 0;
+  .profile-content {
+
+    display: flex;
+    flex-direction: row;
+
+    .profile-nav {
+      padding: $padding 0;
+      flex-wrap: nowrap;
+    }
+
+    .profile-body {
+      padding: $padding 0;
+      margin-left: 10px;
+    }
+
   }
+
 }
