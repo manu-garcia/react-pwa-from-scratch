@@ -6,7 +6,7 @@ var config = {
   watchContentBase: true,
   
   host: 'localhost',
-  port: 80,
+  port: 8080,
 
   // Recommended for hot module replacement
   hot: true,
