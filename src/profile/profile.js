@@ -4,9 +4,9 @@ import {
   Link
 } from 'react-router-dom';
 
-import MyBands from './my-bands';
-import MyGenres from './my-genres';
-import MyInstruments from './my-instruments';
+import MyBands from './bands';
+import MyGenres from './genres';
+import MyInstruments from './instruments';
 
 import './profile.scss';
 

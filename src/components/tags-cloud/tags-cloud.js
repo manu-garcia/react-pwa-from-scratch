@@ -14,10 +14,12 @@ class TagsCloud extends Component {
 
   renderTags () {
     let list = [];
-    
-    this.props.tags.forEach((value, key) => {
-      list.push(<li key={key} style={{border: value.selected ? '1px solid black' : ''}} onClick={(event) => this.onClick(value)}>{value.name}</li>)
-    })
+
+    if (this.props.tags) {
+      this.props.tags.forEach((value, key) => {
+        list.push(<li key={key} style={{border: value.selected ? '1px solid black' : ''}} onClick={(event) => this.onClick(value)}>{value.name}</li>)
+      })
+    }
 
     return (
       <ul>{list}</ul>

@@ -6,16 +6,16 @@ import {
   Switch  
 } from 'react-router-dom';
 
+import store from './store';
 import AppNav from './appnav';
 import Footer from './footer/footer';
 
 import Loadable from 'react-loadable';
 
 import './app.scss';
-
 function Loading() {
   return <div>Loading...</div>;
-}
+};
 
 const Publish = Loadable({
   loader: () => import(/* webpackChunkName: "publish" */'./publish/publish'),
@@ -33,6 +33,10 @@ const Search = Loadable({
 });
 
 class App extends Component {
+  constructor () {
+    super();
+  }
+
   render() {
     return (
       <HashRouter>  
