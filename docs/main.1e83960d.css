@@ -70,3 +70,25 @@ a {
   height: 100%; }
   .application-container .content {
     min-height: 80%; }
+  .application-container .login-content {
+    min-height: 100%;
+    position: relative; }
+  .application-container .login-box {
+    position: absolute;
+    border: 1px solid black;
+    max-width: 40%;
+    left: 30%;
+    top: 30%;
+    padding: 15px; }
+    .application-container .login-box label {
+      display: block;
+      max-width: 100%;
+      min-width: 100%; }
+    .application-container .login-box input {
+      display: block;
+      margin: 5px 0;
+      max-width: 100%;
+      min-width: 100%; }
+    .application-container .login-box button {
+      display: block;
+      margin: 5px 0; }

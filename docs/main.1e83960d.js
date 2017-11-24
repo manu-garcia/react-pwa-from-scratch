@@ -25039,12 +25039,65 @@ var App = function (_Component) {
   function App() {
     _classCallCheck(this, App);
 
-    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this));
+    var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this));
+
+    var userLoggedIn = false;
+
+    if (localStorage) {
+      userLoggedIn = localStorage.getItem('userLoggedIn') === "true";
+    }
+
+    _this.state = {
+      userLoggedIn: userLoggedIn
+    };
+
+    _this.login = function () {
+      if (localStorage) {
+        localStorage.setItem('userLoggedIn', true);
+      }
+      _this.setState({ userLoggedIn: true });
+    };
+    return _this;
   }
 
   _createClass(App, [{
     key: 'render',
     value: function render() {
+      var userLoggedIn = this.state.userLoggedIn;
+
+
+      if (!userLoggedIn) {
+        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'application-container' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'login-content' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'form',
+              { 'class': 'login-box' },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                { 'for': 'user' },
+                'Email:'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', name: 'user' }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'label',
+                null,
+                'Password:'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'password', name: 'password' }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'button',
+                { onClick: this.login },
+                'Log in'
+              )
+            )
+          )
+        );
+      }
+
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* HashRouter */],
         null,
