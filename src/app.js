@@ -35,9 +35,50 @@ const Search = Loadable({
 class App extends Component {
   constructor () {
     super();
+
+    let userLoggedIn = false;
+
+    if (localStorage) {
+      userLoggedIn = localStorage.getItem('userLoggedIn') === "true";
+    }
+
+    this.state = {
+      userLoggedIn: userLoggedIn,
+    };
+  
+    this.login = () => {
+      if (localStorage) {
+        localStorage.setItem('userLoggedIn', true);
+      }
+      this.setState({ userLoggedIn: true });
+    };
   }
 
   render() {
+
+    const { userLoggedIn } = this.state;
+    
+    if (!userLoggedIn) {
+      return (
+        <div className="application-container">
+
+          <div className="login-content">
+          
+            <form class="login-box">
+              <label for="user">Email:</label>
+              <input type="text" name="user" />
+
+              <label>Password:</label>
+              <input type="password" name="password" />
+
+              <button onClick={this.login}>Log in</button>
+            </form>
+          </div>
+
+        </div>
+      )
+    }
+
     return (
       <HashRouter>  
         <div className="application-container">
