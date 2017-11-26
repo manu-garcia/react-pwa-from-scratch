@@ -86,7 +86,7 @@
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"profile","1":"search","2":"publish"}[chunkId]||chunkId) + "." + {"0":"b4bd105b","1":"caa06c39","2":"b7e68706"}[chunkId] + ".chunk.js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"profile","1":"search","2":"publish"}[chunkId]||chunkId) + "." + {"0":"b4bd105b","1":"30c2b03e","2":"b7e68706"}[chunkId] + ".chunk.js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -25113,7 +25113,7 @@ var App = function (_Component) {
             { className: 'login-content' },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'form',
-              { 'class': 'login-box' },
+              { className: 'login-box' },
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'label',
                 { 'for': 'user' },

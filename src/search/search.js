@@ -25,43 +25,43 @@ class Search extends Component {
           <div className="search-results-box">
           <div className="search-result-box">
               <span className="search-result-title">Result example title</span>
-              <p>This is a result exaple description</p>
+              <p>This is a result example description</p>
             </div>
             <div className="search-result-box">
               <span className="search-result-title">Result example title</span>
-              <p>This is a result exaple description</p>
+              <p>This is a result example description</p>
             </div>
             <div className="search-result-box">
               <span className="search-result-title">Result example title</span>
-              <p>This is a result exaple description</p>
+              <p>This is a result example description</p>
             </div>
             <div className="search-result-box">
               <span className="search-result-title">Result example title</span>
-              <p>This is a result exaple description</p>
+              <p>This is a result example description</p>
             </div>
             <div className="search-result-box">
               <span className="search-result-title">Result example title</span>
-              <p>This is a result exaple description</p>
+              <p>This is a result example description</p>
             </div>
             <div className="search-result-box">
               <span className="search-result-title">Result example title</span>
-              <p>This is a result exaple description</p>
+              <p>This is a result example description</p>
             </div>
             <div className="search-result-box">
               <span className="search-result-title">Result example title</span>
-              <p>This is a result exaple description</p>
+              <p>This is a result example description</p>
             </div>
             <div className="search-result-box">
               <span className="search-result-title">Result example title</span>
-              <p>This is a result exaple description</p>
+              <p>This is a result example description</p>
             </div>
             <div className="search-result-box">
               <span className="search-result-title">Result example title</span>
-              <p>This is a result exaple description</p>
+              <p>This is a result example description</p>
             </div>
             <div className="search-result-box">
               <span className="search-result-title">Result example title</span>
-              <p>This is a result exaple description</p>
+              <p>This is a result example description</p>
             </div>
           </div>
         </div>

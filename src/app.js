@@ -64,7 +64,7 @@ class App extends Component {
 
           <div className="login-content">
           
-            <form class="login-box">
+            <form className="login-box">
               <label for="user">Email:</label>
               <input type="text" name="user" />
 
