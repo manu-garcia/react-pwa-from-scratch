@@ -274,11 +274,6 @@ var MyBands = function (_Component) {
             "li",
             null,
             "Band 2..."
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            "li",
-            null,
-            "Band 3..."
           )
         )
       );

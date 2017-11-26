@@ -7,7 +7,6 @@ class MyBands extends Component {
         <ul>
           <li>Band 1...</li>
           <li>Band 2...</li>
-          <li>Band 3...</li>
         </ul>
       </div>
     );
