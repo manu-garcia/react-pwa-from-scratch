@@ -456,8 +456,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./profile.scss", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./profile.scss");
+		module.hot.accept("!!../../node_modules/css-loader/index.js??ref--1-2!../../node_modules/sass-loader/lib/loader.js!./profile.scss", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js??ref--1-2!../../node_modules/sass-loader/lib/loader.js!./profile.scss");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -476,7 +476,7 @@ exports = module.exports = __webpack_require__(133)(undefined);
 
 
 // module
-exports.push([module.i, "* {\n  padding: 0;\n  margin: 0; }\n\nhtml, body {\n  height: 100%; }\n\nul {\n  list-style: none; }\n\na {\n  color: inherit; }\n\n.profile-component {\n  padding: 2%; }\n  .profile-component .profile-box img.profile-img {\n    min-width: 200px;\n    min-height: 200px;\n    background-color: black; }\n  .profile-component .profile-content {\n    display: flex;\n    flex-direction: row; }\n    .profile-component .profile-content .profile-nav {\n      padding: 2% 0;\n      flex-wrap: nowrap; }\n    .profile-component .profile-content .profile-body {\n      padding: 2% 0;\n      margin-left: 10px; }\n", ""]);
+exports.push([module.i, "*{padding:0;margin:0}body,html{height:100%}ul{list-style:none}a{color:inherit}.profile-component{padding:2%}.profile-component .profile-box img.profile-img{min-width:200px;min-height:200px;background-color:#000}.profile-component .profile-content{display:flex;flex-direction:row}.profile-component .profile-content .profile-nav{padding:2% 0;flex-wrap:nowrap}.profile-component .profile-content .profile-body{padding:2% 0;margin-left:10px}", ""]);
 
 // exports
 

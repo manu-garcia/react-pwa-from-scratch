@@ -259,8 +259,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./search.scss", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./search.scss");
+		module.hot.accept("!!../../node_modules/css-loader/index.js??ref--1-2!../../node_modules/sass-loader/lib/loader.js!./search.scss", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js??ref--1-2!../../node_modules/sass-loader/lib/loader.js!./search.scss");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -279,7 +279,7 @@ exports = module.exports = __webpack_require__(133)(undefined);
 
 
 // module
-exports.push([module.i, "* {\n  padding: 0;\n  margin: 0; }\n\nhtml, body {\n  height: 100%; }\n\nul {\n  list-style: none; }\n\na {\n  color: inherit; }\n\n.search-component {\n  display: flex;\n  flex-direction: column; }\n  .search-component .search-header {\n    padding: 2%;\n    text-align: center;\n    flex-grow: 1;\n    border-bottom: 1px solid black; }\n    .search-component .search-header .search-icon {\n      margin-left: 10px; }\n  .search-component .search-content-box {\n    display: flex;\n    flex-direction: row;\n    flex-wrap: nowrap; }\n    .search-component .search-content-box .search-refine-box {\n      flex: 30%; }\n      .search-component .search-content-box .search-refine-box .header {\n        width: 100%;\n        border-bottom: 1px solid black;\n        text-align: center; }\n      .search-component .search-content-box .search-refine-box ul {\n        padding: 2%; }\n    .search-component .search-content-box .search-results-box {\n      flex: 70%;\n      border-left: 1px solid black;\n      padding: 2%; }\n      .search-component .search-content-box .search-results-box .search-result-box {\n        border: 1px solid black;\n        padding: 2%;\n        margin-bottom: 2%; }\n        .search-component .search-content-box .search-results-box .search-result-box .search-result-title {\n          font-size: 1.5em; }\n", ""]);
+exports.push([module.i, "*{padding:0;margin:0}body,html{height:100%}ul{list-style:none}a{color:inherit}.search-component{display:flex;flex-direction:column}.search-component .search-header{padding:2%;text-align:center;flex-grow:1;border-bottom:1px solid #000}.search-component .search-header .search-icon{margin-left:10px}.search-component .search-content-box{display:flex;flex-direction:row;flex-wrap:nowrap}.search-component .search-content-box .search-refine-box{flex:30%}.search-component .search-content-box .search-refine-box .header{width:100%;border-bottom:1px solid #000;text-align:center}.search-component .search-content-box .search-refine-box ul{padding:2%}.search-component .search-content-box .search-results-box{flex:70%;border-left:1px solid #000;padding:2%}.search-component .search-content-box .search-results-box .search-result-box{border:1px solid #000;padding:2%;margin-bottom:2%}.search-component .search-content-box .search-results-box .search-result-box .search-result-title{font-size:1.5em}", ""]);
 
 // exports
 

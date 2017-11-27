@@ -72,8 +72,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./publish.scss", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./publish.scss");
+		module.hot.accept("!!../../node_modules/css-loader/index.js??ref--1-2!../../node_modules/sass-loader/lib/loader.js!./publish.scss", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js??ref--1-2!../../node_modules/sass-loader/lib/loader.js!./publish.scss");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -92,7 +92,7 @@ exports = module.exports = __webpack_require__(133)(undefined);
 
 
 // module
-exports.push([module.i, ".publish-component {\n  text-align: center;\n  padding: 5% 0; }\n  .publish-component p {\n    padding: 10% 0; }\n", ""]);
+exports.push([module.i, ".publish-component{text-align:center;padding:5% 0}.publish-component p{padding:10% 0}", ""]);
 
 // exports
 
