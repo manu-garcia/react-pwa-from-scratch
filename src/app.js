@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  HashRouter,
+  BrowserRouter,
   Route,
   Link,
   Switch  
@@ -80,7 +80,7 @@ class App extends Component {
     }
 
     return (
-      <HashRouter>  
+      <BrowserRouter>  
         <div className="application-container">
 
           <AppNav />
@@ -96,7 +96,7 @@ class App extends Component {
           <Footer />
 
         </div>
-      </HashRouter>
+      </BrowserRouter>
     );
   }  
 }

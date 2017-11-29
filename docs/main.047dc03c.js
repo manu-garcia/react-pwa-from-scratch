@@ -86,7 +86,7 @@
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"profile","1":"search","2":"publish"}[chunkId]||chunkId) + "." + {"0":"1c43a85a","1":"722d9040","2":"c6c6d815"}[chunkId] + ".chunk.js";
+/******/ 		script.src = __webpack_require__.p + "" + ({"0":"profile","1":"search","2":"publish"}[chunkId]||chunkId) + "." + {"0":"06daf666","1":"722d9040","2":"c6c6d815"}[chunkId] + ".chunk.js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -1820,9 +1820,9 @@ var createTransitionManager = function createTransitionManager() {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__BrowserRouter__ = __webpack_require__(94);
-/* unused harmony reexport BrowserRouter */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__BrowserRouter__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__HashRouter__ = __webpack_require__(96);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__HashRouter__["a"]; });
+/* unused harmony reexport HashRouter */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Link__ = __webpack_require__(45);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_2__Link__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__MemoryRouter__ = __webpack_require__(98);
@@ -25137,7 +25137,7 @@ var App = function (_Component) {
       }
 
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* HashRouter */],
+        __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* BrowserRouter */],
         null,
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
@@ -25250,7 +25250,7 @@ BrowserRouter.propTypes = {
 };
 
 
-/* unused harmony default export */ var _unused_webpack_default_export = (BrowserRouter);
+/* harmony default export */ __webpack_exports__["a"] = (BrowserRouter);
 
 /***/ }),
 /* 95 */
@@ -25629,7 +25629,7 @@ HashRouter.propTypes = {
 };
 
 
-/* harmony default export */ __webpack_exports__["a"] = (HashRouter);
+/* unused harmony default export */ var _unused_webpack_default_export = (HashRouter);
 
 /***/ }),
 /* 97 */
