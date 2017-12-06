@@ -6,6 +6,8 @@ import {
   Switch  
 } from 'react-router-dom';
 
+import * as firebase from 'firebase';
+
 import store from './store';
 import AppNav from './appnav';
 import Footer from './footer/footer';
@@ -33,25 +35,95 @@ const Search = Loadable({
 });
 
 class App extends Component {
+
   constructor () {
     super();
 
-    let userLoggedIn = false;
-
-    if (localStorage) {
-      userLoggedIn = localStorage.getItem('userLoggedIn') === "true";
-    }
+    // Authentication managed by Firebase
+    this.user;
+    this.auth;
+    this.database;
 
     this.state = {
-      userLoggedIn: userLoggedIn,
+      userLoggedIn: false,
     };
-  
-    this.login = () => {
-      if (localStorage) {
-        localStorage.setItem('userLoggedIn', true);
-      }
-      this.setState({ userLoggedIn: true });
-    };
+
+    // This bind is necesary to be invoked from the view
+    this.handleLoginClick = this.handleLoginClick.bind(this);
+    this.handleLoginWithGoogleClick = this.handleLoginWithGoogleClick.bind(this);
+
+  }
+
+  /**
+   * Component initialisation. This is temporary as part of the first Firebase integration
+   */
+  componentDidMount() {
+    
+    this.initFirebase ();
+
+  }
+    
+
+  /**
+   * Firebase services initialisation
+   */
+  initFirebase () {
+    
+    // Firebase initialisation
+    firebase.initializeApp({
+      "apiKey": "AIzaSyBMJzfY5XcNdRBD1ieczobaMPpk30PPTPI",
+      "databaseURL": "https://react-pwa-54a52.firebaseio.com",
+      "authDomain": "react-pwa-54a52.firebaseapp.com",
+      "projectId": "react-pwa-54a52"
+    });
+
+    // Initialise firebase services
+    this.auth = firebase.auth();
+    this.database = firebase.database();
+
+    // Listen for auth state changes
+    this.auth.onAuthStateChanged(this.onAuthStateChanged.bind(this));
+
+  }
+
+  /**
+   * Listen to auth changes from Firebase
+   * 
+   * @param {*} user : returned from Firebase API
+   */
+  onAuthStateChanged(user) {
+
+    if (user) {
+
+      this.user = user;
+      this.setState({ 
+        userLoggedIn: true,
+        user: {
+          displayName: user.displayName,
+        }
+       });
+
+    }
+
+  }
+
+  /**
+   * TODO: This is the normal login button. To be integrated with Firebase Email/Password authentication
+   */
+  handleLoginClick () {
+
+    this.setState({ userLoggedIn: true });
+    
+  };
+
+  /**
+   * Firebase google login authentication
+   * 
+   */
+  handleLoginWithGoogleClick () {
+    
+    const provider = new firebase.auth.GoogleAuthProvider();
+    this.auth.signInWithPopup(provider);
   }
 
   render() {
@@ -63,16 +135,20 @@ class App extends Component {
         <div className="application-container">
 
           <div className="login-content">
-          
-            <form className="login-box">
-              <label htmlFor="user">Email:</label>
-              <input type="text" name="user" />
 
-              <label>Password:</label>
-              <input type="password" name="password" />
+            <div className="login-box">
+              <form>
+                <label htmlFor="user">Email:</label>
+                <input type="text" name="user" />
 
-              <button onClick={this.login}>Log in</button>
-            </form>
+                <label>Password:</label>
+                <input type="password" name="password" />
+
+                <button onClick={this.handleLoginClick}>Log in</button>
+              </form>
+              <div onClick={this.handleLoginWithGoogleClick}>Log in with google</div>
+            </div>
+           
           </div>
 
         </div>
@@ -93,7 +169,7 @@ class App extends Component {
             </Switch>
           </div>
 
-          <Footer />
+          <Footer user={this.state.user}/>
 
         </div>
       </BrowserRouter>
