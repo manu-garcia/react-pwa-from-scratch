@@ -7,7 +7,7 @@ class Publish extends Component {
     return (
       <div className="publish-component">
         <p>
-          Publishing...
+          Publishing cool stuff
         </p>
       </div>
     );
