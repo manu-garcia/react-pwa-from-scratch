@@ -62,6 +62,8 @@ module.exports = {
       to: 'sw.js',
       replaceCacheVersion: true,
       replaceAssetFiles: true,
+      // That would empty the SW file, to deactivate the service worker in DEV mode
+      deactivateSW: true,
     }),
 
   ]
