@@ -1,19 +1,23 @@
 webpackJsonp([0],{
 
-/***/ 293:
+/***/ 296:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__bands__ = __webpack_require__(299);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__genres__ = __webpack_require__(300);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__instruments__ = __webpack_require__(301);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__profile_scss__ = __webpack_require__(302);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__profile_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__profile_scss__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_redux__ = __webpack_require__(127);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__bands__ = __webpack_require__(302);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__genres__ = __webpack_require__(303);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__instruments__ = __webpack_require__(304);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__profile_scss__ = __webpack_require__(305);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__profile_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__profile_scss__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__actions_profile_actions__ = __webpack_require__(298);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _dec, _class;
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -30,7 +34,13 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var Profile = function (_Component) {
+
+
+var Profile = (_dec = Object(__WEBPACK_IMPORTED_MODULE_1_react_redux__["b" /* connect */])(function (store) {
+  return {
+    profile: store.profile
+  };
+}), _dec(_class = function (_Component) {
   _inherits(Profile, _Component);
 
   function Profile(props) {
@@ -40,8 +50,14 @@ var Profile = function (_Component) {
   }
 
   _createClass(Profile, [{
+    key: 'componentWillMount',
+    value: function componentWillMount() {
+      this.props.dispatch(Object(__WEBPACK_IMPORTED_MODULE_7__actions_profile_actions__["a" /* fetchProfile */])());
+    }
+  }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
 
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
@@ -53,12 +69,12 @@ var Profile = function (_Component) {
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             { className: 'stage-name' },
-            'Stage name'
+            this.props.profile.stageName
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             { className: 'bio' },
-            'Bio...'
+            this.props.profile.bio
           )
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -74,7 +90,7 @@ var Profile = function (_Component) {
                 'li',
                 null,
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
+                  __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["b" /* Link */],
                   { to: this.props.match.url + '/mybands' },
                   'My bands'
                 )
@@ -83,7 +99,7 @@ var Profile = function (_Component) {
                 'li',
                 null,
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
+                  __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["b" /* Link */],
                   { to: this.props.match.url + '/mygenres' },
                   'My Genres'
                 )
@@ -92,7 +108,7 @@ var Profile = function (_Component) {
                 'li',
                 null,
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
+                  __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["b" /* Link */],
                   { to: this.props.match.url + '/myinstruments' },
                   'My Instruments'
                 )
@@ -102,9 +118,13 @@ var Profile = function (_Component) {
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             { className: 'profile-body' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: this.props.match.url + '/mybands', component: __WEBPACK_IMPORTED_MODULE_2__bands__["a" /* default */] }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: this.props.match.url + '/mygenres', component: __WEBPACK_IMPORTED_MODULE_3__genres__["a" /* default */] }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: this.props.match.url + '/myinstruments', component: __WEBPACK_IMPORTED_MODULE_4__instruments__["a" /* default */] })
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: this.props.match.url + '/mybands', component: __WEBPACK_IMPORTED_MODULE_3__bands__["a" /* default */] }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: this.props.match.url + '/mygenres', render: function render(props) {
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__genres__["a" /* default */], { genres: _this2.props.profile.genres });
+              } }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: this.props.match.url + '/myinstruments', render: function render(props) {
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__instruments__["a" /* default */], { instruments: _this2.props.profile.instruments });
+              } })
           )
         )
       );
@@ -112,13 +132,56 @@ var Profile = function (_Component) {
   }]);
 
   return Profile;
-}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"])) || _class);
+
 
 /* harmony default export */ __webpack_exports__["default"] = (Profile);
 
 /***/ }),
 
-/***/ 295:
+/***/ 298:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = fetchProfile;
+/* unused harmony export setInstruments */
+/* unused harmony export setGenre */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_firebase__);
+
+
+// TODO: All that is to see firebase realtime database integrated
+var userId = __WEBPACK_IMPORTED_MODULE_0_firebase___default.a.auth().currentUser.uid;
+
+function fetchProfile() {
+
+  return function (dispatch) {
+    __WEBPACK_IMPORTED_MODULE_0_firebase___default.a.database().ref().child('profiles/' + userId).on('value', function (data) {
+      dispatch({
+        type: "FETCH_PROFILE",
+        data: data.val()
+      });
+    });
+  };
+};
+
+function setInstruments(instruments) {
+  return {
+    type: "SET_INSTRUMENTS",
+    data: instruments
+  };
+};
+
+function setGenre(genre) {
+  return {
+    type: "SET_GENRE",
+    data: genre
+  };
+};
+
+/***/ }),
+
+/***/ 299:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -144,43 +207,43 @@ var TagsCloud = function (_Component) {
   }
 
   _createClass(TagsCloud, [{
-    key: 'onClick',
+    key: "onClick",
     value: function onClick(tag) {
       if (this.props.onTagClick) {
         this.props.onTagClick(tag);
       }
     }
   }, {
-    key: 'renderTags',
+    key: "renderTags",
     value: function renderTags() {
       var _this2 = this;
 
       var list = [];
 
       if (this.props.tags) {
-        this.props.tags.forEach(function (value, key) {
+        Object.keys(this.props.tags).forEach(function (value, key) {
           list.push(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'li',
-            { key: key, style: { border: value.selected ? '1px solid black' : '' }, onClick: function onClick(event) {
+            "li",
+            { key: key, onClick: function onClick(event) {
                 return _this2.onClick(value);
               } },
-            value.name
+            value
           ));
         });
       }
 
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'ul',
+        "ul",
         null,
         list
       );
     }
   }, {
-    key: 'render',
+    key: "render",
     value: function render() {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'div',
-        { className: 'tags-cloud-component' },
+        "div",
+        { className: "tags-cloud-component" },
         this.renderTags()
       );
     }
@@ -193,45 +256,7 @@ var TagsCloud = function (_Component) {
 
 /***/ }),
 
-/***/ 296:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["b"] = fetchInstruments;
-/* harmony export (immutable) */ __webpack_exports__["a"] = fetchGenres;
-/* unused harmony export setInstruments */
-/* unused harmony export setGenre */
-function fetchInstruments() {
-  return {
-    type: "FETCH_INSTRUMENTS",
-    data: [{ name: 'Guitar', selected: false }, { name: 'Banjo', selected: false }, { name: 'Drums', selected: false }]
-  };
-};
-
-function fetchGenres() {
-  return {
-    type: "FETCH_GENRES",
-    data: [{ name: 'Rock', selected: false }, { name: 'Blues', selected: false }, { name: 'Jazz', selected: false }]
-  };
-};
-
-function setInstruments(instruments) {
-  return {
-    type: "SET_INSTRUMENTS",
-    data: instruments
-  };
-};
-
-function setGenre(genre) {
-  return {
-    type: "SET_GENRE",
-    data: genre
-  };
-};
-
-/***/ }),
-
-/***/ 299:
+/***/ 302:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -287,18 +312,16 @@ var MyBands = function (_Component) {
 
 /***/ }),
 
-/***/ 300:
+/***/ 303:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_redux__ = __webpack_require__(127);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_tags_cloud_tags_cloud__ = __webpack_require__(295);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__actions_profile_actions__ = __webpack_require__(296);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_tags_cloud_tags_cloud__ = __webpack_require__(299);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__actions_profile_actions__ = __webpack_require__(298);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _dec, _class;
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -312,11 +335,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var MyGenres = (_dec = Object(__WEBPACK_IMPORTED_MODULE_1_react_redux__["b" /* connect */])(function (store) {
-  return {
-    genres: store.profile.genres
-  };
-}), _dec(_class = function (_Component) {
+var MyGenres = function (_Component) {
   _inherits(MyGenres, _Component);
 
   function MyGenres() {
@@ -326,11 +345,6 @@ var MyGenres = (_dec = Object(__WEBPACK_IMPORTED_MODULE_1_react_redux__["b" /* c
   }
 
   _createClass(MyGenres, [{
-    key: 'componentWillMount',
-    value: function componentWillMount() {
-      this.props.dispatch(Object(__WEBPACK_IMPORTED_MODULE_3__actions_profile_actions__["a" /* fetchGenres */])());
-    }
-  }, {
     key: 'onTagClick',
     value: function onTagClick(tag) {
       // tag.selected = !tag.selected;
@@ -355,25 +369,22 @@ var MyGenres = (_dec = Object(__WEBPACK_IMPORTED_MODULE_1_react_redux__["b" /* c
   }]);
 
   return MyGenres;
-}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"])) || _class);
-
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
 /* harmony default export */ __webpack_exports__["a"] = (MyGenres);
 
 /***/ }),
 
-/***/ 301:
+/***/ 304:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_redux__ = __webpack_require__(127);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_tags_cloud_tags_cloud__ = __webpack_require__(295);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__actions_profile_actions__ = __webpack_require__(296);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_tags_cloud_tags_cloud__ = __webpack_require__(299);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__actions_profile_actions__ = __webpack_require__(298);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _dec, _class;
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -387,11 +398,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var MyInstruments = (_dec = Object(__WEBPACK_IMPORTED_MODULE_1_react_redux__["b" /* connect */])(function (store) {
-  return {
-    instruments: store.profile.instruments
-  };
-}), _dec(_class = function (_Component) {
+var MyInstruments = function (_Component) {
   _inherits(MyInstruments, _Component);
 
   function MyInstruments() {
@@ -401,11 +408,6 @@ var MyInstruments = (_dec = Object(__WEBPACK_IMPORTED_MODULE_1_react_redux__["b"
   }
 
   _createClass(MyInstruments, [{
-    key: 'componentWillMount',
-    value: function componentWillMount() {
-      this.props.dispatch(Object(__WEBPACK_IMPORTED_MODULE_3__actions_profile_actions__["b" /* fetchInstruments */])());
-    }
-  }, {
     key: 'onTagClick',
     value: function onTagClick(tag) {
       // tag.selected = !tag.selected;
@@ -429,20 +431,19 @@ var MyInstruments = (_dec = Object(__WEBPACK_IMPORTED_MODULE_1_react_redux__["b"
   }]);
 
   return MyInstruments;
-}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"])) || _class);
-
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
 /* harmony default export */ __webpack_exports__["a"] = (MyInstruments);
 
 /***/ }),
 
-/***/ 302:
+/***/ 305:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(303);
+var content = __webpack_require__(306);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -450,7 +451,7 @@ var transform;
 var options = {"hmr":true}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(291)(content, options);
+var update = __webpack_require__(294)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -468,10 +469,10 @@ if(false) {
 
 /***/ }),
 
-/***/ 303:
+/***/ 306:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(290)(undefined);
+exports = module.exports = __webpack_require__(293)(undefined);
 // imports
 
 
