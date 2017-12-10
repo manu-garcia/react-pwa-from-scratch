@@ -2,18 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import TagsCloud from '../components/tags-cloud/tags-cloud';
-import { fetchInstruments, setInstruments } from '../actions/profile.actions'
+import { setInstruments } from '../actions/profile.actions'
 
-@connect(store => {
-  return {
-    instruments: store.profile.instruments,
-  };
-})
 class MyInstruments extends Component {
-
-  componentWillMount () {
-    this.props.dispatch(fetchInstruments());
-  }
 
   onTagClick (tag) {
     // tag.selected = !tag.selected;

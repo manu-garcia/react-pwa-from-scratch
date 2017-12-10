@@ -5,10 +5,13 @@ const defaults = {
 
 const reducer = (state = defaults, action) => {
   switch (action.type) {
+    case 'FETCH_PROFILE':
+      return {...action.data};
     case 'FETCH_GENRES':
-      return Object.assign({}, state, { genres: action.data });
+    debugger;
+      return {...state, genres: action.data};
     case 'FETCH_INSTRUMENTS':
-      return Object.assign({}, state, { instruments: action.data });
+      return {...state, instruments: action.data };
     case 'SET_GENRE':
       
     default:
