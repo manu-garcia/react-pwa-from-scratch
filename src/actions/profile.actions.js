@@ -1,25 +1,19 @@
-export function fetchInstruments () {
-  return {
-    type: "FETCH_INSTRUMENTS",
-    data: [
-      {name: 'Guitar', selected: false},
-      {name: 'Banjo', selected: false},
-      {name: 'Drums', selected: false},
-    ],
+import firebase from 'firebase';
+
+// TODO: All that is to see firebase realtime database integrated
+const userId = firebase.auth().currentUser.uid;
+
+export function fetchProfile () {
+  
+  return dispatch => {
+    firebase.database().ref().child(`profiles/${userId}`).on('value', data => {
+      dispatch({
+        type: "FETCH_PROFILE",
+        data: data.val(),
+      });
+    })
   };
 };
-
-export function fetchGenres () {
-  return {
-    type: "FETCH_GENRES",
-    data: [
-      {name: 'Rock', selected: false},
-      {name: 'Blues', selected: false},
-      {name: 'Jazz', selected: false},
-    ],
-  };
-};
-
 
 export function setInstruments (instruments) {
   return {

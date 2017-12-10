@@ -16,8 +16,8 @@ class TagsCloud extends Component {
     let list = [];
 
     if (this.props.tags) {
-      this.props.tags.forEach((value, key) => {
-        list.push(<li key={key} style={{border: value.selected ? '1px solid black' : ''}} onClick={(event) => this.onClick(value)}>{value.name}</li>)
+      Object.keys(this.props.tags).forEach((value, key) => {
+        list.push(<li key={key} onClick={(event) => this.onClick(value)}>{value}</li>)
       })
     }
 
