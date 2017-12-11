@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "firebase": "^4.7.0",
+    "idb": "^2.0.4",
     "react": "^16.0.0",
     "react-icons": "^2.2.7",
     "react-loadable": "^5.3.1",
