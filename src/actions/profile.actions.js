@@ -4,6 +4,7 @@ import DB from '../services/db';
 
 export function fetchProfile () {
 
+  // Offline first method to read the profile
   return DB.fetchFromDB({
     eventType: "FETCH_PROFILE",
     name: 'profiles',
