@@ -1,13 +1,13 @@
 // SW_CACHE_VERSION will be replaced while copying this file to the build directory with InterpolateSWPlugin
-const reactPWAFromScratchCacheVersion = 'react-pwa-from-scratch-v' + '1512865185305';
+const reactPWAFromScratchCacheVersion = 'react-pwa-from-scratch-v' + '1513038726858';
 
 // SW_ASSET_FILES will be feed with all the generated assets for pre-cache purposes
 //  while copying this file to the build directory with InterpolateSWPlugin
-const cacheAll = ["profile.79cac1cc.chunk.js",
-"search.a88c52ab.chunk.js",
+const cacheAll = ["profile.66dd8a9b.chunk.js",
+"search.b373d1a3.chunk.js",
 "publish.d466143a.chunk.js",
-"main.c41dcdd8.js",
-"main.c41dcdd8.css"];
+"main.9d1c9aea.js",
+"main.9d1c9aea.css"];
 
 /**
  * Pre-cache some assets when service worker is registered
