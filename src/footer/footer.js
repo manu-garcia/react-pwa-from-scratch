@@ -9,7 +9,7 @@ class Footer extends Component {
    * 
    */
   welcome() {
-    if (this.props.user.displayName) {
+    if (this.props.user && this.props.user.displayName) {
       return <div>Welcome {this.props.user.displayName}</div>
     }
   }

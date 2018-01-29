@@ -7,7 +7,7 @@ class Publish extends Component {
     return (
       <div className="publish-component">
         <p>
-          Publishing cool stuff
+          This code has been lazy loaded! Check the network tab in Dev Tools!
         </p>
       </div>
     );

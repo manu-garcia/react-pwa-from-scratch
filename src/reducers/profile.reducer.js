@@ -8,7 +8,6 @@ const reducer = (state = defaults, action) => {
     case 'FETCH_PROFILE':
       return {...action.data};
     case 'FETCH_GENRES':
-    debugger;
       return {...state, genres: action.data};
     case 'FETCH_INSTRUMENTS':
       return {...state, instruments: action.data };

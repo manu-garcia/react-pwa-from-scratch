@@ -137,7 +137,7 @@ class App extends Component {
           <div className="login-content">
 
             <div className="login-box">
-              <form>
+              {/* <form>
                 <label htmlFor="user">Email:</label>
                 <input type="text" name="user" />
 
@@ -145,35 +145,37 @@ class App extends Component {
                 <input type="password" name="password" />
 
                 <button onClick={this.handleLoginClick}>Log in</button>
-              </form>
-              <div onClick={this.handleLoginWithGoogleClick}>Log in with google</div>
+              </form> */}
+              <button onClick={this.handleLoginWithGoogleClick}>Log in with google</button>
             </div>
            
           </div>
 
         </div>
       )
-    }
+    } else {
 
-    return (
-      <BrowserRouter>  
-        <div className="application-container">
+      return (
+        <BrowserRouter>  
+          <div className="application-container">
 
-          <AppNav />
+            <AppNav />
 
-          <div className="content">
-            <Switch>
-              <Route path="/publish" component={Publish}/>
-              <Route path="/profile" component={Profile}/>
-              <Route path="/search" component={Search}/>
-            </Switch>
+            <div className="content">
+              <Switch>
+                <Route path="/publish" component={Publish}/>
+                <Route path="/profile" component={Profile}/>
+                <Route path="/search" component={Search}/>
+              </Switch>
+            </div>
+
+            <Footer user={this.state.user}/>
+
           </div>
+        </BrowserRouter>
+      );
 
-          <Footer user={this.state.user}/>
-
-        </div>
-      </BrowserRouter>
-    );
+    }
   }  
 }
 
